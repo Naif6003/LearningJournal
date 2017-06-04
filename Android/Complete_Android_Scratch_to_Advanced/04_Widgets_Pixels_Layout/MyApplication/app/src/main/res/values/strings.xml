@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MyNewApp</string>
+    <string name="app_name">Yosep Kim\'s Application</string>
+    <string name="buttonName">Click Here</string>
+    <string name="loginText">LOGIN</string>
 </resources>
