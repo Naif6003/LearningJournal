@@ -1,0 +1,220 @@
+<!-- <h3>Game</h3>
+<p>{{game.message}}</p>
+<p>
+    Displaying game <code>{{game.id}}</code>. 
+    Player <code>{{game.player}}</code>
+</p>
+
+<div class="row">
+    <div class="col-xs-9">
+        <h3>Game Goes Here</h3>
+    </div>
+    <div class="col-xs-3">
+        <h3>Chat</h3>
+       
+    </div>
+</div> -->
+
+
+<div class="gamePage" ng-controller="GamesController">
+
+
+<!--   <h1>{{ game.title() }}</div>
+    <div class="board">
+    <table>
+        <tr ng-repeat="row in [0,1,2]">
+            <td ng-repeat="col in [0,1,2]" ng-click="cellClick(row,col)" ng-class="cellClass(row,col)">{{cellText(row,col)}}</td>
+        </tr>
+    </table>
+  </div> -->
+
+
+  <h1>{{ game.title() }}</div>
+    <div class="board">
+            <table>
+              <tr ng-repeat="row in [0, 1, 2]">
+                <td ng-repeat="col in [0, 1, 2]" ng-click="move(row, col)" ng-mouseover="mouseOver( row, col, $event)" ng-mouseout="mouseOut($event)">
+                  {{ currentNote.tictactoeBoard[row][col] }}
+                </td>
+              </tr>
+            </table>
+                <p>ttt board{{currentNote.tictactoeBoard}}</p>
+    </div>
+
+
+ <td ng-repeat="col in [0, 1, 2]" ng-click="games.move( row, col)" ng-mouseover="mouseOver(username, row, col, $event)" ng-mouseout="mouseOut($event)">
+          {{ game.board()[row][col] }}
+        </td>
+
+  <p>games: {{ games}}</p>
+  <p>id: {{tictactoeId}}</p>
+
+
+<p>ttt board{{currentNote.tictactoeBoard}}</p>
+
+<br>
+<div>
+  <p>Click the button to run a function:</p>
+  <button ng-click="myFunc()">OK</button>
+  <p>The button has been clicked {{games.count}} times.</p>
+</div>
+
+<button ng-click="count = count + 1" ng-init="count=0">
+  Increment
+</button>
+<span>
+  count: {{count}}
+</span>
+<!--   <div class="board">
+    <table>
+      <tr ng-repeat="row in [0, 1, 2]">
+        <td ng-repeat="col in [0, 1, 2]" ng-click="game.move(username, row, col)" ng-mouseover="mouseOver(username, row, col, $event)" ng-mouseout="mouseOut($event)">
+          {{ game.board()[row][col] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div> -->
+
+<!--        <td ng-repeat="column in [0,1,2]" ng-click="cellClick(row,column)" ng-class="cellClass(row,column)">{{cellText(row,column)}}</td> -->
+
+
+
+
+
+<!--     <table border="1">
+        <tr ng-repeat="row in [0,1,2]">
+            <td ng-repeat="column in [0,1,2]" ng-click="cellClick(row,column)" ng-class="cellClass(row,column)">{{cellText(row,column)}}</td>
+        </tr>
+    </table>
+    </div>
+    <div ng-hide="$ynchronized">
+        <h2>Synchronizing with Server</h2>
+    </div>
+ -->
+
+
+  <!-- <h1>{{ game.title() }} -->
+<!-- 
+  <div class="board">
+    <table>
+      <tr ng-repeat="row in [0, 1, 2]">
+        <td ng-repeat="col in [0, 1, 2]" ng-click="game.move(username, row, col)" ng-mouseover="mouseOver(username, row, col, $event)" ng-mouseout="mouseOut($event)">
+          {{ game.board()[row][col] }}
+        </td>
+      </tr>
+    </table>
+  </div>
+ -->
+<!-- </div> -->
+
+
+<!--     <div class = "chat">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="list-group">
+                        <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <pre>{{currentNote | json}}</pre>
+                   
+                </div>
+        </div>
+    </div> -->
+
+
+<!-- <div class = "hashtag">
+    <table id="board">
+        <tr ng-repeat="cell in games[0].tictactoeBoard">
+          <td  ng-click="move(cell)" class="top left">{{cell.value}}</td>
+          <td  ng-click="move(cell)" class="top middle">{{cell.value}}</td>
+          <td  ng-click="move(cell)" class="top right">{{cell.value}}</td>
+        </tr>
+        <tr>
+          <td  ng-click="move(4)" class="center left">{{markAt(4)}}</td>
+          <td  ng-click="move(5)" class="center middle">{{markAt(5)}}</td>
+          <td  ng-click="move(6)" class="center right">{{markAt(6)}}</td>
+        </tr>
+        <tr>
+          <td  ng-click="move(7)" class="bottom left">{{markAt(7)}}</td>
+          <td  ng-click="move(8)" class="bottom middle">{{markAt(8)}}</td>
+          <td  ng-click="move(9)" class="bottom right">{{markAt(9)}}</td>
+        </tr>
+    </table>
+<div>
+ -->
+
+    <div class = "chat">
+            <div class="row">
+                <div class="page-header">
+                    <h1>Notes</h1>
+                </div>
+                <div class="col-xs-4">
+                    <button ng-click="newNote()" class="btn btn-block btn-success">New Note</button>
+                    <hr />
+                    <div class="list-group">
+                        <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <pre>{{currentNote | json}}</pre>
+                    <form>
+                        <input class="form-control" type="text" ng-model="currentNote.title" placeholder="Enter a title">
+                        <br />
+                        <textarea class="form-control" ng-model="currentNote.body"></textarea>
+                        <br />
+                        <input type="button" ng-click="saveNote()" value="Save">
+                    </form>
+                </div>
+        </div>
+    </div>
+
+   <div class="col-xs-4">
+                    <button ng-click="newNote()" class="btn btn-block btn-success">New Note</button>
+                    <hr />
+                    <div class="list-group">
+                        <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <pre>{{currentNote | json}}</pre>
+                    <form>
+                        <input class="form-control" type="text" ng-model="currentNote.title" placeholder="Enter a title">currentNote.title
+                        <br />
+                        <textarea class="form-control" ng-model="currentNote.tictactoeBoard[0]"></textarea>currentNote.tictactoeBoard
+                        <br />
+                        <input type="button" ng-click="saveNote()" value="Save">
+
+                    </form>
+
+                </div>
+</div>
+
+
+
+
+
+
+    
+<!-- 
+      <div class="well">
+        <div><button class="btn-primary btn-lg" ng-repeat="cell in board[0]" ng-disabled="isTaken(cell);" ng-click="move(cell);">{{ cell.value }}</button></div>
+        <div><button class="btn-primary btn-lg" ng-repeat="cell in board[1]" ng-disabled="isTaken(cell);" ng-click="move(cell);">{{ cell.value }}</button></div>
+        <div><button class="btn-primary btn-lg" ng-repeat="cell in board[2]" ng-disabled="isTaken(cell);" ng-click="move(cell);">{{ cell.value }}</button></div>
+        <br/>
+        <p>
+          <span ng-hide="winner || cat">Current Player: {{ currentPlayer }}</span>
+          <span ng-show="winner">Player {{ currentPlayer }} won!</span>
+          <span ng-show="cat">Cat</span>
+        </p>
+      </div>
+
+          
+    <button ng-click="reset();" class="btn btn-primary btn-large">New Game</button>
+
+
+ -->
+
+
+

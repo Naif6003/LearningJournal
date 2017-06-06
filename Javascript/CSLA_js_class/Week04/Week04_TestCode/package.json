@@ -1,0 +1,14 @@
+{
+  "name": "yosepkim_week04_assignment",
+  "version": "1.0.0",
+  "description": "Create a Mystery Word Game.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yosep Kim",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^6.6.0"
+  }
+}

@@ -1,0 +1,182 @@
+
+<div class="gamePage" ng-controller="GameController">
+
+  <span>
+      <h2>{{currentNote.title}}</h2>
+  </span>
+<div class = "titleGamePage" ng-click="setCurrentNote(games[games.length-1])">
+  <span  ng-click="show = !show">
+    <span ng-hide="show">
+      Let's Play Tic Tac Toe<br>CLICK HERE TO START!!!
+    <span>
+  </span>
+
+</div>
+<div>
+    <h4>Player 1 is {{games[games.length-1].player1}}</h4>
+<span ng-hide="playerShow">
+      <h4 ng-if="games[games.length-1].player2.length > 0">  Player 2 is {{games[games.length-1].player2}}</h4>
+        <span class = "gameReg">
+           Enter Player 2 name<input type="text" ng-model="games[games.length-1].player2" />
+         <button ng-click="addPlayer2()">Add</button>
+</span>
+<div>
+
+
+
+
+
+
+<div class="form-group">
+
+    </div>
+    <div class="board">
+            <table>
+              <tr ng-repeat="row in [0, 1, 2]">
+                <td ng-repeat="col in [0, 1, 2]"  ng-click="setCurrentSqaure(row,col)" >
+                  {{ currentNote.tictactoeBoard[row][col] }}
+                </td>
+              </tr>
+            </table>
+    </div>
+
+    <div class = "chat">
+<!--             <div class="row">
+                <div class="page-header">
+                    <h1>Notes</h1>
+                </div>
+                <div class="col-xs-4">
+                    <button ng-click="newNote()" class="btn btn-block btn-success">New Note</button>
+                    <hr />
+                    <div class="list-group"> debug
+                        <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                    </div>
+                </div> -->
+     <!--            <div class="col-xs-8">
+                    <pre>{{currentNote | json}}</pre>
+                    <form>
+                        <input class="form-control" type="text" ng-model="currentNote.title" placeholder="Enter a title">
+                        <br>
+                        <textarea class="form-control" ng-model="currentNote.chat[0].message"></textarea>
+                        <br>
+                        <input type="button" ng-click="saveNote()" value="Save">
+                    </form>
+                </div> -->
+        </div>
+    </div>
+
+<h1> C H A T </h1>
+<!-- 
+<div ng-repeat="cn in currentNote" >
+
+    {{currentNote.chat[cn].message}}
+    <input class="form-control" ng-model="currentNote.chat[cn].message"></input>
+</div>
+ -->
+<div ng-repeat="chat in currentNote.chat" >
+  <div ng-repeat="k in chat">
+    {{currentNote.chat[k].message}}
+  <input class="form-control" ng-model="currentNote.chat[k].message"></input>
+  </div>
+</div>
+
+
+  <div class ="gameReg">
+          <p>Hello {{name}}!</p>
+
+          <div ng-repeat="item in items">
+            {{item.firstName}} {{item.lastName}}
+          </div>
+          <div ng-repeat="itemToAdd in itemsToAdd">
+            <input type="text" ng-model="itemToAdd.firstName" />
+            <input type="text" ng-model="itemToAdd.lastName" />
+            <button ng-click="add(itemToAdd)">Add</button>
+          </div>
+          <div>
+            <button ng-click="addNew()">Add new</button>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+<pre>{{games | json}}</pre>
+<!-- 
+          <p>Hello {{name}}!</p>
+
+          <div ng-repeat="item in items">
+            {{item.firstName}} {{item.lastName}}
+          </div>
+          <div ng-repeat="itemToAdd in itemsToAdd">
+            <input type="text" ng-model="itemToAdd.firstName" />
+            <input type="text" ng-model="itemToAdd.lastName" />
+            <button ng-click="add(itemToAdd)">Add</button>
+          </div>
+          <div>
+            <button ng-click="addNew()">Add new</button>
+          </div> -->
+
+<!-- 
+    <div ng-repeat="item in items">
+            {{item.firstName}} {{item.lastName}}
+          </div>
+
+          <div ng-repeat="itemToAdd in itemsToAdd">
+            <input type="text" ng-model="itemToAdd.firstName" />
+            <input type="text" ng-model="itemToAdd.lastName" />
+            <button ng-click="add(itemToAdd)">Add</button>
+          </div>
+          <div>
+            <button ng-click="addNew()">Add new</button>
+          </div>
+        </div> -->
+
+<!-- 
+   <div class="col-xs-4">
+                    <button ng-click="newNote()" class="btn btn-block btn-success">New Note</button>
+                    <hr />
+                    <div class="list-group">
+                        <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <span>{{currentNote | json}}</span>
+                </div>
+</div>
+
+
+ -->
+
+
+<!-- 
+<div class="gamePage" ng-controller="GameController">
+
+  <span>
+      <h2>{{currentNote.title}}</h2>
+  </span>
+<div class = "titleGamePage" ng-click="setCurrentNote(games[games.length-1])">
+  <span  >
+    <span >
+      Let's Play Tic Tac Toe
+    <span>
+     <h4 >  Player 2 is {{games[games.length-1].player2}}</h4>
+        <span class = "gameReg">
+           Enter Player 2 name<input type="text" ng-model="games[games.length-1].player2" />
+         <button ng-click="addPlayer2(), show = !show" >Add</button>
+  </span>
+
+</div>
+
+<!-- 
+<div>
+    <h4>Player 1 is {{games[games.length-1].player1}}</h4>
+<span ng-hide="playerShow">
+      <h4 ng-if="games[games.length-1].player2.length > 0">  Player 2 is {{games[games.length-1].player2}}</h4>
+        <span class = "gameReg">
+           Enter Player 2 name<input type="text" ng-model="games[games.length-1].player2" />
+         <button ng-click="addPlayer2()">Add</button>
+</span>
+<div>
+ --> -->

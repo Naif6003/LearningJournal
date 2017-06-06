@@ -1,0 +1,63 @@
+<div class="container">
+<div class="row">
+<div class="panel panel-default">
+   <div class="panel-heading">
+        <h1 class="panel-title" >{{show.name}} </h1> 
+        <div style="float: left">
+		<span ng-repeat="genre in show.genres">| {{genre}} </span>
+		</div>
+        <h2 class="panel-title" align="right">Rating: {{show.rating.average}}</h2>
+    </div>
+<div class="panel-body">
+<div class="col-sm-6">
+	<div ng-if="show.image == null">
+		<img style="width: 420px; height: 590px;" class="img-thumbnail" src="../views/images/no_image.jpg">
+    </div>
+    <div ng-if="show.image">
+		<img style="width: 420px; height: 590px;" class="img-thumbnail" ng-src="{{show.image.medium}}">
+	</div>
+	<table border="1" align="center">
+		<tr>
+			<th>Status:</th>
+			<td>{{show.status}}</td>
+		</tr>
+		<tr>
+			<th>Runtime:</th>
+			<td>{{show.runtime}}</td>
+		</tr>
+		<tr>
+		   	<th>Premiered:</th>
+		   	<td>{{show.premiered}}</td>
+		</tr>
+		<tr>
+		   	<th>Schedule:</th>
+		   	<td><ul><div ng-repeat="day in show.schedule.days"><li>{{day}}</li></div></ul></td>
+		</tr>
+		<tr>
+			<th>Time:</th>
+			<td>{{show.schedule.time}}</td>
+		</tr>
+	</table>
+</div>
+	
+<div class="col-sm-6">
+	<div> 
+        <p>
+            <p ng-bind-html='show.summary | trustHTML'></p>
+        </p>
+        <ul ng-repeat="actor in show._embedded.cast">
+        	<div ng-if="actor.person.image">
+            <li><img style="width: 126px; height: 177px;" class="img-thumbnail" ng-src="{{actor.person.image.medium}}">
+            <b>{{actor.person.name}}</b> as {{actor.character.name}}</li>
+            </div>
+            <div ng-if="actor.person.image == null">
+            <li><img style="width: 126px; height: 177px;" class="img-thumbnail" src="../views/images/no_image.jpg">
+            <b>{{actor.person.name}}</b> as {{actor.character.name}}</li>
+            </div>
+        </ul> 
+    </div>   
+</div>
+</div>
+</div>
+</div>
+</div>

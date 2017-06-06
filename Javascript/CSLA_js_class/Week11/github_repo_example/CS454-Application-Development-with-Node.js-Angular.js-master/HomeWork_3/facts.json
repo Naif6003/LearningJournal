@@ -1,0 +1,65 @@
+[
+    {
+        "text": "21 is a repdigit in base 4 (111).",
+        "number": 21,
+        "found": true,
+        "type": "math",
+        "saved": 1445302029745
+    },
+    {
+        "text": "the number of demands which were sent to the Chinese government by the Japanese government of Okuma Shigenobu in 1915",
+        "number": 21,
+        "found": true,
+        "type": "trivia",
+        "saved": 1445302044142
+    },
+    {
+        "text": "November 12th is the day in 1958 that a team of rock climbers led by Warren Harding completes the first ascent of The Nose on El Capitan in Yosemite Valley.",
+        "number": "11/12",
+        "found": true,
+        "type": "date",
+        "saved": 1445302070606
+    },
+    {
+        "text": "2015 is the year that NASA's Solar Probe Plus will orbit the Sun on May 21st.",
+        "number": 2015,
+        "found": true,
+        "type": "year",
+        "saved": 1445302085666
+    },
+    {
+        "text": "2015 is the year that the Voyager 1 space probe will reach the heliopause.",
+        "number": 2015,
+        "found": true,
+        "type": "year",
+        "saved": 1445312753770
+    },
+    {
+        "text": "2025 is the year that nothing interesting came to pass.",
+        "number": 2025,
+        "found": true,
+        "type": "year",
+        "saved": 1445312866727
+    },
+    {
+        "text": "2025 is the year that we do not know what happened.",
+        "number": 2025,
+        "found": true,
+        "type": "year",
+        "saved": "Mon Oct 19 2015 20:48:41 -0700 1445312921"
+    },
+    {
+        "text": "2025 is the year that nothing interesting came to pass.",
+        "number": 2025,
+        "found": true,
+        "type": "year",
+        "saved": "Mon Oct 19 2015 20:50:58 -0700"
+    },
+    {
+        "text": "2025 is the year that the Earth probably went around the Sun.",
+        "number": 2025,
+        "found": true,
+        "type": "year",
+        "saved": "Mon Oct 19 2015 21:07:26  -0700"
+    }
+]

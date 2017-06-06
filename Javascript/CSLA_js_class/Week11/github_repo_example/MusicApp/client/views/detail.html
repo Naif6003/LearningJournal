@@ -1,0 +1,29 @@
+<div class="details-block col-md-offset-2">
+
+   <div>
+      <div class="row">
+         <div class="album-name col-md-5"> Albums of {{ result.name }}</div>
+      </div>
+      <hr class="style2">
+   </div>                  
+
+   <div ng-repeat="detail in details">
+      <div class="row">
+         <div class="album-name col-md-5"> {{ detail.name }}</div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-3">
+            <img ng-src="{{ (detail.images.length > 0) ? detail.images[0].url : '../images/person_placeholder.jpg'}}" height="100" width="100" alt="" />
+         </div>
+
+         <div class="col-md-5">
+            <div>
+               <div ng-bind-html="detail.summary | trustHTML"></div>
+            </div>
+         </div>                        
+      </div>
+      <hr class="style1">
+   </div>
+
+</div>

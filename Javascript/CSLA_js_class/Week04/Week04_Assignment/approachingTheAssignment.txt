@@ -1,0 +1,10 @@
+runs the command line for the mystery game
+
+prints menu 
+	picks a random word from the easy category
+
+
+and then prints the choices for the menu and each has a choice
+	1. 
+	2. 
+	3.

@@ -1,0 +1,61 @@
+<div class="search-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+
+            <form>
+               <h2 class="v-center">search</h2>
+               <p class="lead">/// Music Artist</p>
+
+               <div class="input-group">
+                  <input type="text" ng-model="albumName" class="form-control input-md"/>
+                  <span class="input-group-btn">
+                     <button
+                     type="button"
+                     class="btn btn-md btn-warning pull-right"
+                     ng-click="searchAlbum()">Search</button>
+                  </span>
+               </div>
+            </form>
+
+            <div ng-if="results" class="results-block">
+               <div ng-repeat="result in results">
+
+               <div ng-if="!details || selectedArtistId == result.id">
+
+                     <div class="row">
+                        <div class="artist-genre col-md-8"> {{ result.genres.join(' | ') }}</div>
+                     </div>
+
+                     <div class="row">
+                        <div class="artist-name col-md-8"> {{ result.name }}</div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col-md-3">
+                           <img ng-src="{{ (result.images.length > 0) ? result.images[0].url : '../images/person_placeholder.jpg'}}" height="200" width="200" alt="" />
+                        </div>
+
+                        <div class="col-md-8">
+                           <div>
+                              <div ng-bind-html="result.summary | trustHTML"></div>
+                           </div>
+
+                           <div ng-if="!details || selectedArtistId != result.id">
+                              <button ng-click="showDetails(result.id)">Details</button>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div ng-if="details && selectedArtistId == result.id" album-details></div>
+
+                     <hr class="style2">
+                  </div>
+
+               </div>               
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>

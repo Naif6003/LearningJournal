@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
+<body>
+
+<div ng-app="myApp">
+
+        <div ng-controller="FirstCtrl">
+            <input type="text" ng-model="firstName"><!-- Input entered here -->
+            <br>Input is : <strong>{{firstName}}</strong><!-- Successfully updates here -->
+        </div>
+        <hr>
+        <div ng-controller="SecondCtrl">
+            Input should also be here: {{firstName}}<!-- How do I automatically updated it here? -->
+        </div>
+
+        <div  ng-controller="MainCtrl">
+          <p>Hello {{name}}!</p>
+
+          <div ng-repeat="item in items">
+            {{item.firstName}} {{item.lastName}}
+          </div>
+          <div ng-repeat="itemToAdd in itemsToAdd">
+            <input type="text" ng-model="itemToAdd.firstName" />
+            <input type="text" ng-model="itemToAdd.lastName" />
+            <button ng-click="add(itemToAdd)">Add</button>
+          </div>
+          <div>
+            <button ng-click="addNew()">Add new</button>
+          </div>
+        </div>
+
+    </div>
+
+<script>
+
+</script>
+
+</body>
+</html>

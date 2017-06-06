@@ -1,0 +1,45 @@
+<div class="container">
+	
+	<div class="row">
+		<div class="col-md-3">
+			<img src="{{movie.image.medium}}" width="270" height="360">
+		</div>
+		<div class="col-md-9">
+			<h3>{{movie.name}}</h3>
+            <small ng-repeat="s in movie.genres">
+                                {{s}} 
+                                <span ng-if="movie.genres[$index + 1]">|</span>
+                    </small>
+			<hr/>
+			<p ng-bind-html='movie.summary | trustHTML'></p>
+		</div>
+	</div>
+    <br/>
+    <h2>Casts</h2>
+    <hr/>
+    <div class="container">
+    	<div ng-repeat="cast in movie._embedded.cast">
+    		<div class="col-md-3 row">
+                
+                <table class="table table-bordered">
+                <tr>
+                    <td align="center">
+                        <div ng-if="cast.character.image.medium">
+                            <img src="{{cast.character.image.medium}}" width="100" height="100" class="thumbnail">
+                        </div>
+                        <div ng-if="!cast.character.image.medium">
+                            <img src="images/NoImage.jpeg" width="100" height="100" class="thumbnail">
+                        </div>
+                        {{cast.person.name}} </br><small>as {{cast.character.name}}</small> 
+                    </td>
+                </tr>
+                </table>
+    			
+    		</div>
+    	</div>
+        <span ng-show="movie._embedded.cast.length === 0 ">
+            * no results found
+    </span>
+    </div>
+	
+</div>

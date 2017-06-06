@@ -1,0 +1,22 @@
+.results-block {
+  margin-top: 20px;
+  padding: 10px 10px;
+  background: #EFEFEF;
+}
+
+.show-name {
+  font-size: 25px
+}
+
+hr {
+  border: 1px;
+  color: #000;
+}
+
+.album_div{
+    width: 150px;
+    height: 150px;
+/*    border: 1px solid black;  testing purposes
+    outline-style: double;
+    outline-color: red;
+}*/

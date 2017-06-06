@@ -1,0 +1,33 @@
+<h3>Start Game</h3>
+<form ng-submit="gameStart()">
+	<label for="username">Enter your Name to Play: </label><br>
+	<input type = "text" ng-model="username"  class = "col-md-5"><br><br>
+	<a class="btn btn btn-primary col-md-5"  ng-disabled="usernameNotEntered" href="/#game" type="submit" role="button" >Create Game &raquo;</a>
+</form>
+
+
+
+
+
+<!--  <div class="col-sm-12">
+		<h3>Start Game</h3>
+                <div class="bs-calltoaction bs-calltoaction-default">
+                    <div class="row">
+                        <div class="col-md-7 cta-contents">
+                            <h1 class="cta-title">Enter your Name to Play:</h1>
+                            <div class="cta-desc">
+						  <div>
+						    <form ng-submit="createGame()">
+						      <label for="username">Your name:</label>
+						      <input type="text" ng-model="username" placeholder="What's your name?">
+						      <button ng-disabled="usernameNotEntered" type="submit">Create New Game</button>
+						    </form>
+						  </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 cta-button">
+                            <a class="btn btn-lg btn-block btn-success"  ng-disabled="usernameNotEntered" href="/#game" type="submit" role="button" >Create Game &raquo;</a>
+                        </div>
+                     </div>
+                </div>
+ -->

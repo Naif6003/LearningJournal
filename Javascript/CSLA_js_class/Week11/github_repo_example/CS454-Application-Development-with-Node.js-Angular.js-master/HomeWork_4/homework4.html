@@ -1,0 +1,134 @@
+<!doctype html>
+<html ng-app="groupApp">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="hw4.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-controller="GroupCtrl">
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Midterm Team Manager <small>CS 454</small></h1>
+		</div>
+        
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Add Group</h3>
+				<hr />
+
+				<form ng-submit="addGroup()">				  
+				  <div class="form-group">
+				    <label for="newModuleName">Node Module</label>
+				    <input type="text" class="form-control" ng-model="newModuleName" placeholder="Enter the module name">
+				  </div>
+				  <div class="form-group">
+				    <label for="newModuleDescription">Description</label>
+				    <textarea class="form-control" rows="4" ng-model="newModuleDescription" placeholder="Enter a description of the node module"></textarea>
+				  </div>
+				  <div class="form-group text-center">
+				  	<button type="submit" class="btn btn-primary">Add Group</button>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<h3>Add Student</h3>
+				<hr />
+				<form ng-submit="addStudent()">
+				  <div class="form-group">
+				    <label for="newStudentName">Student Name</label>
+				    <input type="text" class="form-control" ng-model="newStudentName" placeholder="Enter the student's name">
+				  </div>
+
+				  <div class="form-group">
+				    <label for="targetGroup">Group</label>
+				    <select ng-model="groupsName" class="form-control">
+                      <option ng-repeat="group in groups" value="{{group.name}}">
+                          {{group.name}}
+                      </option>					  
+					</select>
+				  </div>
+				  
+				  <div class="form-group text-center">
+				  	<button type="submit" class="btn btn-primary">Add Student</button>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<h3>Add Task</h3>
+				<hr />
+				<form ng-submit="addTask()">
+				  <div class="form-group">
+				    <label for="newTaskText">Task</label>
+				    <input type="text" class="form-control" ng-model="newTask" placeholder="Enter the task description">
+				  </div>
+
+                  <div class="form-group">
+                    <label for="targetGroup">Group</label>
+                    <select ng-model="groupsName2" class="form-control">
+                      <option ng-repeat="group in groups" value="{{group.name}}">
+                          {{group.name}}
+                      </option>                   
+                    </select>
+                  </div>
+
+				  
+				  <div class="form-group text-center">
+				  	<button type="submit" class="btn btn-primary">Add Task</button>
+				  </div>
+				</form>
+			</div>
+		</div>
+		<h3>Groups <small><span>{{groups.length}}</span> Total</small></h3>
+		<hr />	
+
+		<div ng-repeat="group in groups" class="row">
+			<div class="col-xs-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="panel-title">
+                            {{group.name}}
+                            <a href="" ng-click="deleteGroup($index)"><span class="pull-right glyphicon glyphicon-trash"></span></a>
+                        </div>
+					</div>
+					<div class="panel-body">
+						<h3>Description</h3>
+						<p class="lead">{{group.description}}</p>
+						
+						<div class="row">
+							<div class="col-md-3">
+								<h3>Members <small>{{group.students.length}} Total</small></h3>
+                                <hr />
+								<ul class="list-unstyled">
+									<li ng-repeat="student in group.students">
+                                    {{student}} <a href="" ng-click="deleteStudent($parent.$index, $index)"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </li>
+								</ul>
+							</div>
+							<div class="col-md-8">
+								<h3>Tasks <small>{{remaining(group.name)}} of {{group.tasks.length}} Completed</small></h3>
+                                <hr />								
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="task in group.tasks">
+                                        <select ng-model="studentsName">
+                                            <option ng-repeat="student in group.students" value="{{student}}">
+                                            {{student}}
+                                            </option>                   
+                                        </select>
+                                        <input type="checkbox" ng-model="task.done">
+                                        <span class="done-{{task.done}}">{{task.descr}}</span>
+                                        <a href="" ng-click="deleteTask($parent.$index, $index)"><span class="glyphicon glyphicon-trash"></span></a>
+                                    </li>
+                                </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div> 
+</div>   
+</body>
+</html>

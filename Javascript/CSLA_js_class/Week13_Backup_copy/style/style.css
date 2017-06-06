@@ -1,0 +1,94 @@
+
+div h1 {
+    text-align: center;
+    padding-left: 100px;
+
+}
+.gamePage{
+    display: inline-block;
+    width: 950px;
+}
+
+.hashtag{
+    width: 40%;
+    height: 30%;
+
+}
+
+.row{
+    display: inline-block;
+    background: yellow;
+    vertical-align: top;
+    /*float: right;*/
+
+}
+
+
+body {
+    display: inline-block;
+    width: 900px;
+}
+table {
+    border: 3;
+    table-layout: fixed;
+    margin: 10px auto 0 auto;
+    display: inline-block;
+}
+
+/*
+.left {
+    border-right-style: solid;
+}
+.middle {
+    border-left-style: solid;
+    border-right-style: solid;
+}
+.right {
+    border-left-style: solid;
+}
+.top {
+    border-bottom-style: solid;
+}
+.center {
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+.bottom {
+    border-top-style: solid;
+}
+*/
+
+
+.container{ 
+    width: 1020px;
+    height: 920px;    
+}
+    
+
+.board {
+  width: 450px;
+  margin: 0px auto;
+}
+
+.board table {
+  border-collapse: collapse;
+}
+
+.board td {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 25pt;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.board td:last-child {
+  border-right: none;
+}
+
+.board tr:last-child td {
+  border-bottom: none;
+}
+

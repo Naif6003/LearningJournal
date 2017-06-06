@@ -1,0 +1,50 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-18">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title" style="float: left">{{show.name}} </h1> 
+        <h2 class="panel-title" align="right">Rating: {{show.rating.average}}</h2>
+    </div>
+    <div class="panel-body">
+    	<div style="float: left">
+	    	<ul ng-repeat="genre in show.genres"><li>{{genre}}</li></ul>
+	        <img class="img-thumbnail" ng-src="{{show.image.medium}}">
+	        <table border="1" align="center">
+			   <tr>
+			    	<th>Status:</th>
+			    	<td>{{show.status}}</td>
+			    </tr>
+			    <tr>
+			    	<th>Runtime:</th>
+			    	<td>{{show.runtime}}</td>
+			    </tr>
+			    <tr>
+			    	<th>Premiered:</th>
+			    	<td>{{show.premiered}}</td>
+			    </tr>
+			    <tr>
+			    	<th>Schedule:</th>
+			    	<td><ul><div ng-repeat="day in show.schedule.days"><li>{{day}}</li></div></ul></td>
+			   </tr>
+			   <tr>
+			   		<th>Time:</th>
+			   		<td>{{show.schedule.time}}</td>
+			   	</tr>
+			</table>
+        </div>
+        <div> 
+        <p>
+            <p ng-bind-html='show.summary | trustHTML'></p>
+        </p>
+        <ul ng-repeat="actor in show._embedded.cast">
+            <li><img class="img-thumbnail" ng-src="{{actor.person.image.medium}}">
+            {{actor.person.name}} as {{actor.character.name}}</li>
+        </ul> 
+        </div>             
+           
+    </div>
+</div>
+</div>
+</div>
+</div>

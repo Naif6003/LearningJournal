@@ -1,0 +1,18 @@
+{
+  "name": "duplicate search",
+  "version": "1.0.0",
+  "description": "check files within Command Line Interface",
+  "main": "duplicate-search.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "crypto": "0.0.3",
+    "fs": "0.0.1-security",
+    "node-dir": "^0.1.16",
+    "request": "^2.79.0",
+    "treeify": "^1.0.1"
+  },
+  "author": "Yosep Kim",
+  "license": "ISC"
+}
+
+

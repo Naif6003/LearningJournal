@@ -1,0 +1,41 @@
+<style>
+span.uppercasea {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+</style>
+<div class="jumbotron text-left">
+	<h2>Facts <span style="text-transform: uppercase; font-weight: bold;"> {{fact.type}}</span></h2>
+
+	<form>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="number">
+		</div>
+
+		<div class="form-group">
+			<div>
+			<button type="button" class="btn btn-primary" ng-click="getMathFact()">
+				Math
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="getMathTrivia()">
+				Trvia
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="getMathDate()">
+				Date
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="getMathRandom()">
+				Random
+			</button>
+			</div>
+		</div>
+	</form>
+
+	<div>
+		<pre><p><h4><span style="text-transform: uppercase; font-weight: bold;"> {{ fact.type == null ? " " : fact.type  }}</span> <span ng-if="fact.type == 'date'"> {{fact.number  == null ? " " :   '('+dateInput + '/' + fact.year+')'}} </span><span ng-if="fact.type == 'math' || fact.type == 'trivia'">{{fact.number == null ? " " : "(" + fact.number + ")"}}<span></h4></p>
+		<p>{{ fact.text == null ? "" : "- " + fact.text  }}</p></pre>
+	</div>
+	<div>
+	</div>
+</div>
+
+

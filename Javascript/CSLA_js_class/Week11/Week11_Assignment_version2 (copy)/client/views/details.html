@@ -1,0 +1,25 @@
+
+        <div ng-repeat="album in albums.items">
+        <div class = "col-md-9">
+            <span  ng-if="album.album_type === albumType">
+                <span ng-repeat = "market in album.available_markets">
+                    <span ng-if="market === 'US'">
+                        <span class = "album_div">
+                            <span>
+                                <p>Album Name: {{album.name}}</p>
+                                <p>Available Market: {{market}}</p>
+                                <span ng-if="album.images.length > 0">
+                                    <img style="width:120;height:120;" ng-src="{{album.images[0].url}}"/>
+                                </span>
+                                <span ng-if="album.images.length <=0 ">
+                                    <img style="width:120;height:120;" ng-src="images/No_image.gif"/>
+                                </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+        </div>
+    </div>

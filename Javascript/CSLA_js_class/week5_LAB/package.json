@@ -1,0 +1,12 @@
+{
+  "name": "week5Lab-yosepkim",
+  "version": "1.0.0",
+  "description": "app that prints duplicate files in a directory",
+  "main": "duplicate-search.js",
+  "author": "yosep kim",
+  "license": "ISC",
+  "dependencies": {
+    "node-dir": "^0.1.16",
+    "treeify": "^1.0.1"
+  }
+}

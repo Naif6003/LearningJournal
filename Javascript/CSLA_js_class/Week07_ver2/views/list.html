@@ -1,0 +1,256 @@
+       
+<h2>test</h2>
+<div class="row">
+    <div class="col-sm-6 forms">
+
+        <div class="page-header">            
+            <h4>Add Module</h4>            
+        </div>
+
+        <a href="" ng-click="showme=true"> Show Module </a>
+        <a href="" ng-click="showme=false">Hide</a>
+        <div ng-hide = "showme"></div>
+        <div ng-show="showme">
+        <form>
+        <div ng-repeat="moduleToAdd in modulesToAdd">
+        <div class="form-group">
+            <label>Module Name</label>              
+            <input type="text" class="form-control" ng-model = "moduleToAdd.packageName">
+        </div>            
+         <div class="form-group">                
+             <label>Module Website</label>                
+             <div class="input-group">                    
+                 <div class="input-group-addon">http://</div>                                            
+                 <input type="text" class="form-control" ng-model = "moduleToAdd.webLink">                
+             </div>            
+         </div>            
+         <button type="submit" class="btn btn-primary" ng-click = "add(moduleToAdd)">Add Module</button>
+        </form> 
+        <div>
+        </div>
+             <!-- <button ng-click="addNew()">Add new</button> -->
+        </div>
+        </div>
+
+
+
+<!-- 
+  <div ng-repeat="moduleToAdd in modulesToAdd">
+    <input type="text" ng-model="moduleToAdd.moduleName" />
+    <input type="text" ng-model="moduleToAdd.webLink" />
+    <button ng-click="add(moduleToAdd)">Add</button>
+  </div>
+  <div>
+    <button ng-click="addNew()">Add new</button>
+  </div>
+
+
+  <div ng-repeat="module in modules">
+    {{item.moduleName}} {{item.webLink}}
+  </div> -->
+
+
+<!-- 
+<p>Hello {{name}}!</p>
+
+  <div ng-repeat="moduleToAdd in modulesToAdd">
+    <input type="text" ng-model="moduleToAdd.packageName" />
+    <input type="text" ng-model="moduleToAdd.webLink" />
+    <button ng-click="add(moduleToAdd)">Add</button>
+  </div>
+  <div>
+    <button ng-click="addNew()">Add new</button>
+  </div>
+
+
+  <div ng-repeat="module in modules">
+    {{module.packageName}} {{module.webLink}}
+  </div>
+ -->
+
+
+<!-- 
+<p>Hello {{name}}!</p>
+
+
+  <div ng-repeat="itemToAdd in itemsToAdd">
+    <input type="text" ng-model="itemToAdd.firstName" />
+    <input type="text" ng-model="itemToAdd.lastName" />
+    <button ng-click="add(itemToAdd)">Add</button>
+  </div>
+  <div>
+    <button ng-click="addNew()">Add new</button>
+  </div>
+
+
+  <div ng-repeat="item in items">
+    {{item.firstName}} {{item.lastName}}
+  </div>
+
+ -->
+
+
+<!--   <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div> -->
+
+
+<!-- 
+        <div class="page-header">
+            <h4>Sign-Up</h4>
+        </div>
+        <form>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Module</label>
+                <select class="form-control">                    
+                    <option>You need to modify this</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign-Up</button>
+        </form>
+        <br><br><br>
+    </div> -->
+
+        <div class="page-header">
+            <h4>Sign-Up</h4>
+        </div>
+         <a href="" ng-click="showmee=true"> Show Module </a>
+        <a href="" ng-click="showmee=false">Hide</a>
+        <div ng-hide = "showmee"></div>
+        <div ng-show="showmee">
+        <form>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control"  ng-model="userToAdd.firstName">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" ng-model="userToAdd.lastName">
+            </div>
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" ng-model="userToAdd.email">
+            </div>
+            <div class="form-group">
+                <label>Module</label>
+                <select class="form-control" ng-model="selectedModule" ng-options="module as module.packageName for module in modules">         
+                </select>
+
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click = "addUser(userToAdd)">Sign-Up</button>
+        </form>
+        </div>
+        <br><br><br>
+    </div>
+
+
+<!--
+    <div class="col-sm-6 groups">
+        <div class="page-header">
+            <h4>Modules &amp; Groups</h4>
+        </div>
+
+        <div class="panel panel-primary" >
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                </h4>
+            </div>            
+            <div class="panel-body">                
+                <p class="text-center">No students have signed up for this module.</p>
+                <table class="table table-bordered table-hover table-striped">
+                    <tr><th>First</th><th>Last</th><th>E-mail</th><th></th></tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@doe.com</td>
+                        <td class="text-center">
+                            <button class="btn btn-warning btn-sm">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                <p class="text-right remove-group-link">
+                    <button class="btn btn-warning">
+                        <span class="glyphicon glyphicon-trash"></span> Remove Group
+                    </button>
+                </p>
+            </div>
+        </div>        
+    </div>
+</div>
+-->
+
+
+
+
+   <div class="col-sm-6 groups">
+        <div class="page-header">
+            <h4>Modules &amp; Groups</h4>
+        </div>
+
+        <div class="panel panel-primary" ng-repeat = "module in modules | orderBy : 'name' ">           
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                     <a  href = "${{ module.webLink }}" target="_blank">{{ module.packageName }}</a>
+                </h4>
+
+            </div>            
+            <div class="panel-body">                
+                <p class="text-center">No students have signed up for this module.</p>
+                <table class="table table-bordered table-hover table-striped">
+                    <tr><th>First</th><th>Last</th><th>E-mail</th><th></th></tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@doe.com</td>
+                        <td class="text-center">
+                            <button class="btn btn-warning btn-sm">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                <p class="text-right remove-group-link">
+                    <button class="btn btn-warning">
+                        <span class="glyphicon glyphicon-trash"></span> Remove Group
+                    </button>
+                </p>
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+
+
+<!-- ************************************** -->
+<p>users</p>
+<h5>{{users}}</h5>
+<!-- <h3>{{names}}</h3> -->
+<!-- <h3>{{choice}}</h3> -->
+
+<h5>package name</h5>
+{{selectedModule.packageName}}
+
+<h5>module object</h5>
+<p>{{selectedModule}}</p>
+
+<p>modules[0]</p>
+<h4>{{modules[0]}}</h4>
+
+<p>modules</p>
+<h4>{{modules}}</h4>

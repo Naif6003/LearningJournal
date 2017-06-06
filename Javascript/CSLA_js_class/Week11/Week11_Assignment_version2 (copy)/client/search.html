@@ -1,0 +1,127 @@
+<p>testing</p>
+<div class="search-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <form>
+                    <h2 class="v-center">search</h2>
+                    <p class="lead">/// Search Artists</p>
+
+                    <div class="input-group">
+                        <input type="text" ng-model="showname" class="form-control input-md" />
+                        <span class="input-group-btn">
+                     <button
+                        type="button"
+                        class="btn btn-md btn-warning pull-right"
+                        ng-click="searchArtist()">Search</button>
+                  </span>
+                    </div>
+                </form>
+
+                <section class="jumbotron text-center">
+                    <div class="container">
+                        <h1 class="jumbotron-heading">Search Artists</h1>
+                        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Main call to action</a>
+                            <a href="#" class="btn btn-secondary">Secondary action</a>
+                        </p>
+                    </div>
+                </section>
+
+
+
+                <!--                   <p>{{results}}</p>-->
+                <div ng-if="results" class="results-block">
+                    <div class="container">
+                        <div ng-repeat="artist in results">
+                            <div ng-repeat="item in artist.items">
+                                <div>
+                                    <div class="show-name col-sm-5"> </div>
+                                    <span class="col-sm-1">Artist Name: {{item.name}}
+                                        <span  class = "col-sm-1" ng-repeat="genre in item.genres">Genre: {{genre}}</span>
+                                    </span>
+                                    <!--                      <span>{{item.images[1].url}}</span>-->
+                                </div>
+                                <div>
+                                    <div class="col-md-3">
+                                        <!--                         <span><p>{{item.images[1].url}}</p></span>-->
+                                        <span ng-if="item.images.length > 0">
+                                            <img style="width:200px;height:200px;" ng-src="{{item.images[0].url}}"/>
+                                        </span>
+                                        <span ng-if="item.images.length <=0 ">
+                                            <img style="width:200px;height:200px;" ng-src="images/No_image.gif"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>
+                                            <!--                           <div ng-bind-html="result.artists.items | images  " ></div>-->
+                                        </div>
+
+                                        <div>
+                                            <button ng-click="showDetails(result.show)">Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="album text-muted">
+    <div class="container">
+
+        <div class="row">
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card">
+                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--{{results.artists.items[0].images[0].url }}-->

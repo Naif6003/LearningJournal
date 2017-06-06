@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "tictactoe-angular",
+    "staging": "tictactoe-angular"
+  }
+}

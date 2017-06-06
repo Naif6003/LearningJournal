@@ -1,0 +1,91 @@
+
+div h1 {
+    text-align: center;
+    padding-left: 25px;
+
+}
+
+div h2  {
+    text-align: center;
+    padding-left: 25px;
+
+}
+
+div h4 {
+    text-align: center;
+    padding-left: 25px;
+
+}
+.gameStart {
+    padding-left: 400px;
+}
+
+.gameReg {
+    padding-left: 300px;
+}
+.gamePage{
+    display: inline-block;
+    width:999px;
+}
+
+.hashtag{
+    width: 40%;
+    height: 30%;
+
+}
+
+.row{
+    display: inline-block;
+    background: yellow;
+    vertical-align: top;
+    /*float: right;*/
+
+}
+
+
+body {
+    display: inline-block;
+    width: 900px;
+}
+table {
+    border: 5;
+    table-layout: fixed;
+    margin: 10px auto 0 auto;
+    display: inline-block;
+}
+
+.titleGamePage{
+    text-align: center;
+    border-right: 5px solid;
+  border-bottom: 5px solid;
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+  border-left: 5px solid;
+}
+
+.container{ 
+    width: 1020px;
+    height: 920px;    
+}
+    
+
+.board {
+  width: 450px;
+  margin: 0px auto;
+}
+
+/*.board table {
+  border-collapse: collapse;
+}
+*/
+.board td {
+  font-size: 20pt;
+  width: 150px;
+  line-height: 140px;
+  border-right: 5px solid;
+  border-bottom: 5px solid;
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+  border-left: 5px solid;
+  text-align: center;
+}

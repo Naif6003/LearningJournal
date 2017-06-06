@@ -1,0 +1,44 @@
+<!-- <h3>Game</h3>
+<p>{{game.message}}</p>
+<p>
+    Displaying game <code>{{game.id}}</code>. 
+    Player <code>{{game.player}}</code>
+</p>
+
+<div class="row">
+    <div class="col-xs-9">
+        <h3>Game Goes Here</h3>
+    </div>
+    <div class="col-xs-3">
+        <h3>Chat</h3>
+       
+    </div>
+</div> -->
+
+    <div class="container" ng-controller="GamesController">
+        <div class="row">
+            <div class="page-header">
+                <h1>Notes</h1>
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="newNote()" class="btn btn-block btn-success">New Note</button>
+                <hr />
+                <div class="list-group">
+                    <a ng-repeat="note in games" ng-click="setCurrentNote(note)" class="list-group-item">{{note.title}}</a>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <pre>{{currentNote | json}}</pre>
+                <form>
+                    <input class="form-control" type="text" ng-model="currentNote.title" placeholder="Enter a title">
+                    <br />
+                    <textarea class="form-control" ng-model="currentNote.body"></textarea>
+                    <br />
+                    <input type="button" ng-click="saveNote()" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "duplicate search",
+  "version": "1.0.0",
+  "dependencies": {
+    "request": "^2.79.0",
+    "underscore": "^1.8.3",
+    "underscore-node": "^0.1.2"
+  },
+  "author": "Yosep Kim",
+  "license": "ISC"
+}

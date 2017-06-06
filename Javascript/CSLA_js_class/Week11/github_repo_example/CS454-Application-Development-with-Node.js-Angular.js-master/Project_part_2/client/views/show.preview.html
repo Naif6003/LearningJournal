@@ -1,0 +1,18 @@
+
+<div class="panel panel-default" ng-if="sh">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{sh.show.name}}</h2>
+    </div>
+    <div class="panel-body">
+        <div ng-if="sh.show.image == null">
+            <img style="width: 210px; height: 295px; float: left;" align="left" class="img-thumbnail" src="../views/images/no_image.jpg">
+        </div>
+        <div ng-if="sh.show.image">
+            <img class="img-thumbnail" style="float: left" align="left" ng-src="{{sh.show.image.medium}}">
+        </div>
+        <p>
+            <p ng-bind-html='sh.show.summary | trustHTML'></p>
+            <h2 id="lower-button"><a href="/show/{{sh.show.id}}" class="btn btn-lg btn-danger">Details</a></h2>
+        </p>
+    </div>
+</div>

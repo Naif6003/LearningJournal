@@ -1,0 +1,16 @@
+{
+  "name": "homework3",
+  "version": "1.0.0",
+  "description": "command line app",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avenir Fetisov <avenir.fetisov@gmail.com>",
+  "school": "CalStateLA",
+  "dependencies": {
+    "yargs": "^3.27.0",
+	"superagent": "^1.4.0",
+	"moment": "^1.4.6"	
+  }
+}
