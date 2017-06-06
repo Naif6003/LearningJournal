@@ -26,7 +26,7 @@ def anagram2(s1, s2):
     for letter in s2:
         if letter in count:
             count[letter] -= 1
-        
+
 
 anagram2("gdog", "godg")
 """
