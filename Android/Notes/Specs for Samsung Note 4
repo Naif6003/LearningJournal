@@ -1,0 +1,9 @@
+Galaxy Note 4 Specification for Creating a Virtual Device
+Use the specifications below when you create a Virtual Device.
+
+Screen Size : 5.7 inches
+Resolution : 1440 x 2560 pixels
+Supported device states: portrait and landscape
+Cameras: front and back
+
+similar to Nexus 6p
