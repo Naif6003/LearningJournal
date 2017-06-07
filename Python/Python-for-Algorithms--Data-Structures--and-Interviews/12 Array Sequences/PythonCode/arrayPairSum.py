@@ -19,39 +19,79 @@
 
 
 
+# def pair_sum(arr, k):
+#     if len(arr) < 2:
+#         return
+#
+#     # Sets for tracking
+#     seen = set()
+#     output = set()
+#
+#     # For every number in array
+#     for num in arr:
+#
+#         # Set target difference
+#         target = k - num
+#
+#         # Add it to set if target hasn't been seen
+#         if target not in seen:
+#             seen.add(num)
+#             print "not in seen ", num
+#             print "seen ", seen
+#             print "output ", output
+#         else:
+#             print "else ", num
+#             # Add a tuple with the corresponding pair
+#             output.add((min(num, target), max(num, target)))
+#             print "output ", output
+#             # FOR TESTING
+#     print output
+#     # Nice one-liner for printing output
+#     print '\n'.join(map(str, list(output)))
+#     return len(output)
+# print pair_sum([4,2,3,2,1,0],4)
+#
 def pair_sum(arr, k):
     if len(arr) < 2:
         return
-
-    # Sets for tracking
     seen = set()
     output = set()
-
-    # For every number in array
     for num in arr:
-
-        # Set target difference
         target = k - num
-
-        # Add it to set if target hasn't been seen
         if target not in seen:
             seen.add(num)
-
         else:
-            # Add a tuple with the corresponding pair
-            output.add((min(num, target), max(num, target)))
-            # FOR TESTING
+            output.add((min(num,target), max(num,target)))
+    print len(output)
+    return output
 
-    # Nice one-liner for printing output
-    print '\n'.join(map(str, list(output)))
-    return len(output)
+pair_sum([1,2,2,3], 4)
 
 
-pair_sum([1,3,2,2,4,0],4)
 
-"""
-RUN THIS CELL TO TEST YOUR SOLUTION
-"""
+#######################################################3
+# seen = set()
+# output=set()
+#
+#
+# for i in range(10):
+#     seen.add((i))
+#     print seen
+#
+#
+# for num in seen:
+#     print num
+#     output.add((min(num, 9-num),max(num, 9-num)))
+#     print output
+#
+#######################################################3
+
+
+
+###################################################
+# """
+# RUN THIS CELL TO TEST YOUR SOLUTION
+# """
 
 print '\n\n'
 from nose.tools import assert_equal
