@@ -27,46 +27,21 @@ def finder(arr1, arr2):
 
     return arr2[-1]
 
-
-import collections
-
-
-def finder2(arr1, arr2):
-    # Using default dict to avoid key errors
-    d = collections.defaultdict(int)
-    # Add a count for every instance in Array 1
-    for num in arr2:
-        d[num] += 1
-    print d
-        # Check if num not in dictionary
-    for num in arr1:
-        if d[num] == 0:
-            print num
-            return num
-
-            # Otherwise, subtract a count
-        else:
-            d[num] -= 1
-
-
-arr1 = [1,2,3,4,5,6,7]
-arr2 = [3,7,2,1,4,6]
-
 # print finder(arr1,arr2)
-#
-print finder2(arr1,arr2)
 
 
-# def finder3(arr1, arr2):
-#     print arr1+arr2
-#     result = 0
-#     # print arr1+arr2
-#     # Perform an XOR between the numbers in the arrays
-#     for num in arr1 + arr2:
-#         result ^= num
-#         print "result ", result
-#
-#     return result
+
+
+def finder3(arr1, arr2):
+    print arr1+arr2
+    result = 0
+    # print arr1+arr2
+    # Perform an XOR between the numbers in the arrays
+    for num in arr1 + arr2:
+        result ^= num
+        print "result ", result
+
+    return result
 #
 # print finder3(arr1,arr2)
 
@@ -91,3 +66,42 @@ print finder2(arr1,arr2)
 # t.test(finder)
 
 
+import collections
+def finder2(arr1, arr2):
+    # Using default dict to avoid key errors
+    d = collections.defaultdict(int)
+    # Add a count for every instance in Array 1
+    for num in arr2:
+        d[num] += 1
+    # print d
+        # Check if num not in dictionary
+    for num in arr1:
+        if d[num] == 0:
+            return num
+
+            # Otherwise, subtract a count
+        else:
+            d[num] -= 1
+
+# arr1 = [1,2,3,4,5,6,7]
+# arr2 = [3,7,2,1,4,6]
+
+# print finder2(arr1,arr2)
+
+
+
+###################             KEY             ###################################
+
+def finder4(arr1, arr2):
+    diction={key: 0 for key in arr1}
+    for num in arr2:
+        diction[num] +=1
+    for num in arr1:
+        if diction[num] == 0:
+            return num
+        # print diction
+
+
+arr1 = [1,2,3,4,5,6,7]
+arr2 = [3,7,2,1,4,6]
+print finder4(arr1, arr2)
