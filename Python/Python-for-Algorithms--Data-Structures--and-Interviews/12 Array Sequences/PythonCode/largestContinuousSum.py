@@ -1,16 +1,23 @@
-# #######################################
+# ################################# IMPLENTATION    ######
 def large_cont_sum(arr):
-    max_sum = current_sum = arr[0]
 
-    i = start = finish = 0
+    current_sum = max_sum = arr[0]
 
+    if len(arr) ==0:
+        return
     for j in range(1, len(arr)):
-        if
+        if arr[j] > arr[j] + current_sum:
+            current_sum = arr[j]
+        else:
+            current_sum += arr[j]
 
-    pass
+        if current_sum > max_sum:
+            max_sum = current_sum
+
+    return max_sum
 
 print large_cont_sum([1,2,-1,3,4,10,10,-10,-1])
-print large_cont_sum([-2, -3, 4, -1, -2, 1, 5, -3])
+print large_cont_sum([2, -3, 4, -1, -2, 1, 5, -3])
 
 # ############################### ORIGINAL #1    ###################
 # def large_cont_sum(arr):
@@ -54,22 +61,26 @@ print large_cont_sum([-2, -3, 4, -1, -2, 1, 5, -3])
 
 ################################### CORRECT ################################
 # def large_cont_sum(arr):
-#     current_sum = max_sum = arr[0]
-#     i = start = finish= 0
+#     max_sum = current_sum = arr[0]
+#
+#     i = start = finish = 0
+#
 #     for j in range(1, len(arr)):
-#         if arr[j] > (current_sum + arr[j]):
+#         if arr[j] > current_sum + arr[j]:
 #             current_sum = arr[j]
-#             i = j
+#             print "if j: ", j
+#             print "if current: ", current_sum
 #         else:
+#             # print current_sum
 #             current_sum += arr[j]
+#             print "else j: ", j
+#             print "else current: ", current_sum
 #
 #         if current_sum > max_sum:
 #             max_sum = current_sum
-#             start = i
-#             finish = j
-#     print "start => ", start
-#     print "finish => ", finish
-#     print "MAX SUM -> ", max_sum
+#             print "max_sum: ", max_sum
+#
+#     return max_sum
 # print large_cont_sum([1,2,-1,3,4,10,10,-10,-1])
 # print large_cont_sum([-2, -3, 4, -1, -2, 1, 5, -3])
 
