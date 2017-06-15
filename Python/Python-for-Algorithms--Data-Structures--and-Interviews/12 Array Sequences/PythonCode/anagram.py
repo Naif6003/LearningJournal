@@ -35,8 +35,8 @@ def anagram2(s1, s2):
 
     return True
 
-
-print anagram2("god", "god")
+print anagram2("goad", "dosg")
+print anagram2("god", "dog")
 """
 RUN THIS CELL TO TEST YOUR SOLUTION
 """
