@@ -1,0 +1,194 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Assignment Description</title>
+  <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/diff.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+function set_content_height()
+{
+	var h = $(window).height()-$("#csns_header").height()-$("#csns_menu").height()-$("#csns_footer").height()-60;
+	$("#csns_content #content").css("min-height", h+"px"); 
+}
+$(function(){
+	set_content_height();
+    $(window).resize(set_content_height);
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-52219601-1', 'auto');
+	  ga('send', 'pageview');
+</script>
+</head>
+<body>
+
+
+<div id="csns_header">
+<div class="wrap">
+  <a href="/"><img style="border: 0;" id="csns_logo" alt="csns"
+    src="/img/layout/csns_logo.png" /></a>
+  
+
+
+<div id="lpanel"> 
+
+
+
+  <a href="/profile">Yosep's
+  Profile</a>&nbsp; | &nbsp;<a href="/logout">Logout</a>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<script>
+$(function(){
+	$("#mft-menu-item").hide();
+    $("#assessment-menu").hover(function(){
+    	if( $("#mft-menu-item").is(":hidden") )
+    	{
+            $.ajax({
+                url: "/department/cs/option/MFT",
+                dataType: "json",
+                success: function(data){
+                    if( data.result ) $("#mft-menu-item").show();
+                }
+            });
+    	}
+    });
+});
+</script>
+
+<div id="csns_menu">
+<div id="menu">
+<ul class="menu">
+
+
+
+
+
+<li><a href="#">Home</a>
+  <div><ul>
+    
+    
+    <li><a href="/section/taken"><img alt=""
+           src="/img/icons/user_green.png" />Student</a></li>
+  </ul></div>
+</li>
+
+
+
+<li><a href="/department/cs/">Department</a>
+  <div><ul>
+
+    <li><a href="/department/cs/courses"><img alt=""
+           src="/img/icons/books.png" />Courses</a></li>
+    <li><a href="/department/cs/sections"><img alt=""
+           src="/img/icons/blackboard_sum.png" />Sections</a></li>
+    <li><a href="/department/cs/projects"><img alt=""
+           src="/img/icons/bricks.png" />Projects</a></li>
+
+
+  </ul></div>
+</li>
+
+
+
+<li><a href="#">Resources</a>
+  <div><ul>
+    <li><a href="/wiki/content/department/cs/"><img alt=""
+           src="/img/icons/wiki.png" />Wiki</a></li>
+    <li><a href="/department/cs/news/current"><img alt=""
+           src="/img/icons/newspaper.png" />News</a></li>
+    <li><a href="/department/cs/forum/list"><img alt=""
+           src="/img/icons/forums.png" />Forums</a></li>
+    <li><a href="/department/cs/survey/current"><img alt=""
+           src="/img/icons/surveys.png" />Surveys</a></li>
+    <li><a href="/department/cs/mailinglist/list"><img alt=""
+           src="/img/icons/mailinglists.png" />Mailing Lists</a></li>
+
+    <li><a href="/file/"><img alt=""
+           src="/img/icons/file_manager.png" />File Manager</a></li>
+
+  </ul></div>
+</li>
+ 
+
+<li><a href="/wiki/content/csns/help">Help</a></li>
+
+
+</ul>
+</div> <!-- end of menu -->
+</div> <!-- end of csns-menu -->
+
+
+<div id="csns_content"><div id="content">
+  
+
+
+
+
+<script>
+$(function(){
+    document.title = "CS5540 Homework 1: Connecting to the News Api";
+    $("input[type='text'],textarea").css("background-color", "#f0f0f0");
+});
+</script>
+
+<ul id="title">
+<li><a class="bc" href="/section/taken#section-5980962">CS5540 - 1</a></li>
+<li><a class="bc" href="/submission/view?assignmentId=6025574">Homework 1: Connecting to the News Api</a></li>
+<li>Description</li>
+</ul>
+
+<p>1. 2pts: Visit this site and look around a bit:&nbsp;<a href="https://newsapi.org/">https://newsapi.org/</a>. Sign up and get your free api key.</p>
+
+<p>2. 2pts: Past this url: <span style="font-family:courier new,courier,monospace;">https://newsapi.org/v1/articles?source=the-next-web&amp;sortBy=latest&amp;apiKey=</span> &nbsp;&nbsp;with your api key added to the end in a browser. Cut and paste the result into a text file and submit here. Do this before you demo your app.</p>
+
+<p>3. 1pt: In Android Studio, create a new project called &quot;News App&quot; with a blank activity.&nbsp;</p>
+
+<p>4. 5pts: Create a new class called NetworkUtils. Define the appropriate base_url and query_parameter constants (make sure they are Java constants) here as static class members.</p>
+
+<p>5. 5pts: Create a static method in NetworkUtils that uses Uri.Builder to build the appropriate url, the url you used in (2), to return a completed Java URL.</p>
+
+<p>6. 2pts: Put this method in your NetworkUtils class:</p>
+
+<p><b id="docs-internal-guid-5d13bd93-9d84-d4b1-5a87-442711595d2d"><img src="https://lh5.googleusercontent.com/FJXWaUj3vCTfIu8YLnP9pTYPmfmitgRjsdmfwjNxysz5fBgCXIQjGHOtY3e6wlBzEeRir5iLPkrWgoL6lTqAnITXN3KdVuRLyYvAZ0rVbxUMi-hIt2cMwyvAmEFKMHExguuRO4DpWMQ" style="height: 167px; width: 400px;" /></b></p>
+
+<p>7. 2pts: Set up permissions to use the internet in the manifest.</p>
+
+<p>8. 10pts: Extend and implement a subclass of AsyncTask to handle the http request. Display the results in a textview.</p>
+
+<p>9. 4pts: Implement a search menu item. Make the item always appear in the toolbar.</p>
+
+<p>10. EC 2pts: Put spinning progress bars that turn on when the task is running and off when it&#39;s finished.&nbsp;</p>
+
+
+</div></div>
+
+<div id="blue_border"></div>
+<div id="csns_footer">
+<div class="wrap">
+  Copyright &copy; 2012-2017, Chengyu Sun. All rights reserved.
+</div>
+</div>
+
+</body>
+</html>

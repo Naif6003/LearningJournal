@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="searchhint"><font fgcolor="red">te</font>st</string>
+    <string name="searchtitle">Search</string>
+</resources>

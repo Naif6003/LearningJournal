@@ -1,0 +1,9 @@
+ LD_PRELOAD='/usr/$LIB/libstdc++.so.6' DISPLAY=:0 ./emulator -netdelay none -netspeed full -avd Nexus_5X_API_24
+
+
+./emulator -avd Nexus_5X_API_24  
+
+./emulator -list-avds    
+
+/home/cowboyuniverse/Android/Sdk/tools
+
