@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         progress = (ProgressBar) findViewById(R.id.progressBar);
         search = (EditText) findViewById(R.id.searchQuery);
         textView = (TextView)findViewById(R.id.displayJSON);
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+// TODO 9. 4pts: Implement a search menu item. Make the item always appear in the toolbar.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+//DONE TODO 8. 10pts: Extend and implement a subclass of AsyncTask to handle the http request. Display the results in a textview.
 
     class NetworkTask extends AsyncTask<URL, Void, String> {
         String query;
@@ -101,13 +102,5 @@ public class MainActivity extends AppCompatActivity {
 
 // DONE TODO 3. 1pt: In Android Studio, create a new project called "News App" with a blank activity.
 
-
-
-
-
-// TODO 8. 10pts: Extend and implement a subclass of AsyncTask to handle the http request. Display the results in a textview.
-
-// TODO 9. 4pts: Implement a search menu item. Make the item always appear in the toolbar.
-
-// TODO 10.
+//DONE TODO 10. EC 2pts: Put spinning progress bars that turn on when the task is running and off when it's finished.
 

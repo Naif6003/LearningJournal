@@ -16,9 +16,9 @@ import java.util.Scanner;
 /**
  * Created by mark on 6/12/17.
  */
-// TODO 4. 5pts: Create a new class called NetworkUtils. Define the appropriate base_url and query_parameter constants (make sure they are Java constants) here as static class members.
+// DONE TODO 4. 5pts: Create a new class called NetworkUtils. Define the appropriate base_url and query_parameter constants (make sure they are Java constants) here as static class members.
 
-// TODO 5. 5pts: Create a static method in NetworkUtils that uses Uri.Builder to build the appropriate url, the url you used in (2), to return a completed Java URL.
+// DONE TODO 5. 5pts: Create a static method in NetworkUtils that uses Uri.Builder to build the appropriate url, the url you used in (2), to return a completed Java URL.
 // DONE TODO 6. 2pts: Put this method in your NetworkUtils class:
 
 //https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=97635e7f96974c1b95b2f7a11c1b792b
