@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-// TODO 9. 4pts: Implement a search menu item. Make the item always appear in the toolbar.
+// DONE TODO 9. 4pts: Implement a search menu item. Make the item always appear in the toolbar.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
