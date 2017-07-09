@@ -70,7 +70,7 @@ def compress(string):
             # print stringLine
             count = 1
         i += 1
-    stringLine = stringLine + string[i - 1] + str(count)
+    stringLine = stringLine + string[i - 1] + str(count )
 
     return stringLine
 

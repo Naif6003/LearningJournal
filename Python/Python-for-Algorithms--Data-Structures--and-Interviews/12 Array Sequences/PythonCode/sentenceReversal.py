@@ -9,24 +9,19 @@ def rev_word2(s):
 def rev_word(s):
     words = []  # create an empty list of your words
     chars = []  # create an empty list of characters
-    for char in s:
-
-        if char is " " and chars:  # if the character is a space and we've stored some chars
-            words.append("".join(chars))  # combine the stored chars into a word and add it to
-            # the word lise
-
-            chars = []  # clear out the stored chars
-
-        elif char is not " ":
-            chars.append(char)  # otherwise, store the char if it's not a space
-
-    if chars:
-        words.append("".join(chars))  # add the last word found to the word list
 
     if len(s) < 0:
         return
 
-
+    for char in s:
+        if char is " " and chars:  # if the character is a space and we've stored some chars
+            words.append("".join(chars))  # combine the stored chars into a word and add it to
+            # the word lise
+            chars = []  # clear out the stored chars
+        elif char is not " ":
+            chars.append(char)  # otherwise, store the char if it's not a space
+    if chars:
+        words.append("".join(chars))  # add the last word found to the word list
     words = reverse(words)
     return words
 
@@ -58,18 +53,18 @@ print rev_word(('1'))
 RUN THIS CELL TO TEST YOUR SOLUTION
 """
 
-from nose.tools import assert_equal
-
-
-class ReversalTest(object):
-    def test(self, sol):
-        assert_equal(sol('    space before'), 'before space')
-        assert_equal(sol('space after     '), 'after space')
-        assert_equal(sol('   Hello John    how are you   '), 'you are how John Hello')
-        assert_equal(sol('1'), '1')
-        print "ALL TEST CASES PASSED"
-
-
-# Run and test
-t = ReversalTest()
-t.test(rev_word)
+# from nose.tools import assert_equal
+#
+#
+# class ReversalTest(object):
+#     def test(self, sol):
+#         assert_equal(sol('    space before'), 'before space')
+#         assert_equal(sol('space after     '), 'after space')
+#         assert_equal(sol('   Hello John    how are you   '), 'you are how John Hello')
+#         assert_equal(sol('1'), '1')
+#         print "ALL TEST CASES PASSED"
+#
+#
+# # Run and test
+# t = ReversalTest()
+# t.test(rev_word)
