@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "1059960144166",
+    "firebase_url": "https://food-voter-app.firebaseio.com",
+    "project_id": "food-voter-app",
+    "storage_bucket": "food-voter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059960144166:android:806a306d0233d9ed",
+        "android_client_info": {
+          "package_name": "com.android.summer.csula.foodvoter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059960144166-fbnk2rl04i41v1epolq5tphrsqfko9pc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.summer.csula.foodvoter",
+            "certificate_hash": "056ecf502683a614b8bbdac86eab113105860d11"
+          }
+        },
+        {
+          "client_id": "1059960144166-kvf3dbq9191sbo4s3mnn4mjagoj3hls0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.summer.csula.foodvoter",
+            "certificate_hash": "6ab21b05bc1cf007fa0d1750a55e0e130173b870"
+          }
+        },
+        {
+          "client_id": "1059960144166-8or66018kcfvoafaq631mq6d63kb3gf2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.summer.csula.foodvoter",
+            "certificate_hash": "43fe5c1302e6dc6944654e4097b68601d736967f"
+          }
+        },
+        {
+          "client_id": "1059960144166-ge1t87mqceulrheqhc05e4h5mskogc4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.summer.csula.foodvoter",
+            "certificate_hash": "cfb726e2dac16163356c7f2d73612aed378f9039"
+          }
+        },
+        {
+          "client_id": "1059960144166-vqr5vv3d6l95kgu332d738et6hmrl17u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.summer.csula.foodvoter",
+            "certificate_hash": "d233d64773426a47d19cf1dd4cc57cd2d9e2abff"
+          }
+        },
+        {
+          "client_id": "1059960144166-2gc3l8movvsk9tc5kudvmm8a80p1nnit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFIpMzxZfgDc1oOocfz0Lha10XARjqYJM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059960144166-2gc3l8movvsk9tc5kudvmm8a80p1nnit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

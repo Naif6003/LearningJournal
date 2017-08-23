@@ -24,7 +24,8 @@ class Deque:
 
 #addFront(item) adds a new itm to the front of the deque. It needs the item and returns nothing
 
-#addRear(item) adds a new item to the rear of the deque.  It needs the item and returns nothing
+#addRear(item) adds a new item to the rear of the deque.  It needs the ils
+# tem and returns nothing
 
 #removeFront() removes the front item from the deque.  It needs no parameters and returns the item.  The deque is modified
 
