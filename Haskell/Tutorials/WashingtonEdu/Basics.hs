@@ -386,18 +386,18 @@ We can also use function composition in a definition -}
 
 d_incr = double . incr
 
-{- You could define the compose operator yourself:
-compose f g x = f (g x)
+  {- You could define the compose operator yourself:
+  compose f g x = f (g x)
 
-What is the type of compose??  Try it and see what Haskell says for
-  :t compose
-or
-  :t (.)
+  What is the type of compose??  Try it and see what Haskell says for
+    :t compose
+  or
+    :t (.)
 
 
-OK, the type of (.) is
+  OK, the type of (.) is
 
-(.) :: (b -> c) -> (a -> b) -> a -> c
+  (.) :: (b -> c) -> (a -> b) -> a -> c
 
 Notice that the two functions don't need to have  the same type --
 rather, the argument type of the first has to be the return type of the
@@ -425,28 +425,6 @@ then try
 Illustrated with several versions of calculating the length of the
 hypotenuse of a triangle - these all do the same thing)
 -}
-
-hyp x y =
-    let xsq = x*x
-        ysq = y*y
-        sum = xsq + ysq
-    in sqrt sum
-
-
-hyp2 x y =
-    let sum = xsq + ysq
-        xsq = x*x
-        ysq = y*y
-    in sqrt sum
-
-
--- let can be nested
-hyp3 x y =
-    let xsq = x*x
-        ysq = y*y
-    in let sum = xsq + ysq
-       in sqrt sum
-
 
 -- where is another way to produce a local scope
 hyp4 x y =

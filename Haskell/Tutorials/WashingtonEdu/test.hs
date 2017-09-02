@@ -48,8 +48,10 @@ incr = plus 1
 
 
 my_map :: (a -> b) -> [a] -> [b]
-my_map f [] = []
-my_map f (a:x) = f a : my_map f x
+my_map f [] = [] --pattern matching and ends on this
+my_map f (x:xs) = f x : my_map f xs --recursion 
+--pattern matching until 
+--apply fucntion to the first element, : is the cons, call the recursion to the rest of the list
 
 on_off :: Bool -> Integer
 on_off False = 0
@@ -104,5 +106,17 @@ shadow x =
 my_member :: Eq a => a -> [a] -> Bool
 my_member a x = or (map (==a) x)
 
-const k x = k
-clever_length x = sum (map (const 1) x)
+-- const k x = k
+-- clever_length x = sum (map (const 1) x)
+
+my_rev :: [a] -> [a]
+my_rev [] = []
+my_rev (x:xs) = my_rev xs ++ [x]
+
+
+oddsFrom3 = [3, 5 .. ]
+
+primes = 2 : [n | n <- oddsFrom3, null (primeDivisors n)]
+primeDivisors n = [d | d <- takeWhile (\x -> x^2 <= n) primes, n `mod` d == 0]
+
+
