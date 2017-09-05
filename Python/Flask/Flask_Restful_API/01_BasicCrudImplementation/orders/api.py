@@ -9,7 +9,8 @@ import os
 from flask import Flask, url_for, jsonify, request
 
 # using flask sql Alchemy is a wrapper for the sql library
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db_path = os.path.join(basedir, '../data.sqlite')
@@ -81,7 +82,6 @@ class Customer(db.Model):
 # Implementing GET, wee need to get a collection of customers with '/customers/'
 # impleneted with get_customers, the way it'going to be implemented
 # will be setting up a dictionary with customers key and the value for 
-# that dictionary is going to be the query to the database that 
 # returns 'all customers'  'Customer.query.all()', it will return as model objects
 # For each model object, it'll return the url.
 # using list comprehension to convert a list of customers into a list of url's

@@ -2,13 +2,14 @@ import os
 from datetime import datetime
 from dateutil import parser as datetime_parser
 from dateutil.tz import tzutc
-from flask import Flask, url_for, jsonify, request
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, url_for, jsonify, request, g
+# from flask_sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
-from utils import split_url
+from flask.ext.httpauth import HTTPBasicAuth
+from flask_httpauth  import HTTPBasicAuth
 
-# we want to implement error handling that flask has with the 
-# '@app.errorhandler(404)'  We want to pass a json error message
-# instead of the passing of the html 
+from utils import split_url
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -18,14 +19,10 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 
 db = SQLAlchemy(app)
-
+auth = HTTPBasicAuth()
 
 class ValidationError(ValueError):
     pass
-
-# we can also pass an error message of the custom error we previously made
-# with the ValidationError.  We use the argument from the error we made
-# e.args[0]
 
 
 @app.errorhandler(ValidationError)
@@ -55,6 +52,19 @@ def internal_server_error(e):
                         'message': e.args[0]})
     response.status_code = 500
     return response
+
+
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(64), index=True)
+    password_hash = db.Column(db.String(128))
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 
 class Customer(db.Model):
@@ -168,6 +178,26 @@ class Item(db.Model):
             raise ValidationError('Invalid product URL: ' +
                                   data['product_url'])
         return self
+
+
+@auth.verify_password
+def verify_password(username, password):
+    g.user = User.query.filter_by(username=username).first()
+    if g.user is None:
+        return False
+    return g.user.verify_password(password)
+
+@app.before_request
+@auth.login_required
+def before_request():
+    pass
+
+@auth.error_handler
+def unauthorized():
+    response = jsonify({'status': 401, 'error': 'unauthorized',
+                        'message': 'please authenticate'})
+    response.status_code = 401
+    return response
 
 
 @app.route('/customers/', methods=['GET'])
@@ -297,4 +327,10 @@ def delete_item(id):
 
 if __name__ == '__main__':
     db.create_all()
+    # create a development user
+    if User.query.get(1) is None:
+        u = User(username='john')
+        u.set_password('cat')
+        db.session.add(u)
+        db.session.commit()
     app.run(debug=True)
