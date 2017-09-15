@@ -1,5 +1,4 @@
 """Lists defines simple list related operations"""
-from __future__ import division
 
 def get_first_item(li):
     """Return the first item from the list"""

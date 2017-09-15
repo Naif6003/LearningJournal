@@ -36,6 +36,35 @@ def construct_graph_from_file(graph, file_path):
     2. for each following line (from second line to last line), add them as edge to graph
     3. return the graph
     """
+    node = Node()
+    edge = Edge()
+
+
+    with open(file_path) as fp:
+        # lines= fp.read().split("\n", 1)[0]
+
+        lines = fp.read().split("\n")
+        num_nodes = lines[0]
+        print num_nodes
+        # graph.Node.data(lines[0])
+        for line in lines[1:]:
+
+            print line
+        # for line in lines:
+        #     print line
+        #     first_line = line.split("\n", 1)[0].pop(0)
+        #         print first_line
+
+
+        # with open(file_path) as fp:
+        #     lines = fp.read().split("\n")
+        #     for line in lines:
+        #         if len(line) > 0:
+        #             parts = list(map(int, line.split(' ')))
+        #             # print(parts)
+        #             self.numbers.append(parts)
+
+
     return graph
 
 class Node(object):
@@ -84,22 +113,34 @@ class AdjacencyList(object):
     def __init__(self):
         # adjacencyList should be a dictonary of node to edges
         self.adjacency_list = {}
+        self.numNodes = 0
 
+
+    # returns true if node_1 and node_2 are directly connected or false otherwise
     def adjacent(self, node_1, node_2):
         pass
 
+    # returns all nodes that is adjacency from node
     def neighbors(self, node):
-        pass
+       return self.node.keys()
 
+    # adds a new node to its internal data structure.
+    # returns true if the node is added and false if the node already exists
     def add_node(self, node):
         pass
 
+    # remove a node from its internal data structure
+    # returns true if the node is removed and false if the node does not exist
     def remove_node(self, node):
         pass
 
+    # adds a new edge to its internal data structure
+    # returns true if the edge is added and false if the edge already existed
     def add_edge(self, edge):
         pass
 
+    # remove an edge from its internal data structure
+    # returns true if the edge is removed and false if the edge does not exist
     def remove_edge(self, edge):
         pass
 

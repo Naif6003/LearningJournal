@@ -35,4 +35,4 @@ gold g = [ p | p <- oddsFrom3,  isASquare ((g-p) `div` 2) ,   isPrime p ]
 -- looks at the list of oddsForms of non prime numbers which is a composite number and sees if the goldbachs
 -- conjecture fails by seeing if the list is null
 checkGold :: [Integer]
-checkGold = [n |n <- oddsFrom3, not (isPrime n), null (gold n)]
+checkGold = take 2 [n |n <- oddsFrom3, not (isPrime n), null (gold n)]

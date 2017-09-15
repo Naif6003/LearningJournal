@@ -13,7 +13,7 @@ class List(object):
         self.length += 1
 
     def pop(self):
-        if self.lyouength == 0:
+        if self.length == 0:
             return
 
         lastAddress = self.length - 1
