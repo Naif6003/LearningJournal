@@ -134,8 +134,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="188" />
-    <option name="y" value="240" />
+    <option name="x" value="147" />
+    <option name="y" value="20" />
     <option name="width" value="1012" />
     <option name="height" value="840" />
   </component>
@@ -154,7 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,7 +207,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +307,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="188" y="240" width="1012" height="840" extended-state="1" />
+    <frame x="147" y="20" width="1012" height="840" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
